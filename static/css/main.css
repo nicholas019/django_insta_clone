@@ -1,0 +1,48 @@
+body{
+  background-color: #fafafa;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  background-color: rgb(220, 220, 220);
+  
+}
+
+.container-fluid{
+  display: flex;
+  justify-content: space-between; flex-wrap: nowrap; 
+  min-width:500px;
+}
+.form-control-me{
+  width: 400px;
+}
+
+.navbar-brand > img{
+  width: 150px;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+  text-align: center; 
+  justify-content: center;
+  padding-top: 60px;
+
+}
+
+.main_page{
+  width: 600px;
+  height:1000px;
+  margin-right: 330px;
+}
+.sorce{
+  border: 2px solid grey;
+  background-color: white;
+}
+
+.side_bar{
+  width: 400px;
+  height:1000px;
+  background-color: skyblue;
+  position: fixed;
+  left: 60%;
+}

@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- 구글 아이콘 사용  -->
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+    <style>
+      .box{
+        width: 60px;
+        height: 60px;
+        border-radius: 70%;
+        overflow: hidden;
+      }
+      .profile{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .main_body{
+        display: flex; 
+        flex-direction: row; 
+        text-align: center;
+        justify-content: center; 
+        padding-top: 60px; 
+        background-color: #fafafa;
+      }
+      .left_body{
+        width: 600px; 
+        height: 1000px;  
+        margin-right: 443px;
+      }
+      .feed_box{
+        background-color: white;
+        width: 600px;
+        margin: 10px;
+        max-height: 620px;
+        border: 1px solid gray;
+      }
+      .right_box{
+        width: 400px; 
+        height: 1000px; 
+        position: fixed; 
+        left: 60%;
+      }
+    </style>
+  <title>인스타그램 클론코딩 </title>
+</head>
+<body>
+  <!-- 네비 영역 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; width: 100%;">
+  <div class="container-fluid" style="justify-content: space-between; flex-wrap: nowrap; min-width: 1000px;">
+    <img style="width: 100px;" src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt="">
+    <input class="form-control me-2" style="width: 400px;" type="search" placeholder="Search" aria-label="Search">
+    <div>
+      <span class="material-icons">home</span>
+      <span class="material-icons-outlined">send</span>
+      <span class="material-icons-outlined">add_box</span>
+      <span class="material-icons-outlined">explore</span>
+      <span class="material-icons">favorite_border</span>
+    </div>
+  </div>  
+</nav>
+  <!-- 바디 영역 -->
+  
+<div class="main_body" >
+  <!-- 왼쪽 박스 영역  -->
+  <div class="left_body">
+    <div class="feed_box">
+      <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
+        <div class="box">
+          <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi29nqAHktGOjanxqj6X5GeaWCU1jLOoNVHecgJW85fQvX6xA8KHT0shpjVG6q4rlH1iM&usqp=CAU" alt="">
+        </div>
+        <div >
+          nlcholas
+        </div>
+      </div>
+      <div>
+        <img style="width: 100%;" src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1jPF/image/6dTBQAAJW6QLbLUaneCZWL3Vhf4.jpg" alt="">
+      </div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 0 20px;">
+        <div>
+          <span class="material-icons-outlined">favorite_border</span>
+          <span class="material-icons-outlined">mode_comment</span>
+          <span class="material-icons-outlined">send</span>
+        </div>
+        <div>
+          <span class="material-icons-outlined">bookmark_border</span>
+        </div>
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        홍길동 <b>외 17명</b>이 좋아합니다.
+      </div>
+      <div style="text-align: left; font-size: 16px; margin: 0 20px;">
+        <b>nicholas</b> 제주도 2박 3일 여행중 날씨 매우 맑음!
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        <b>gil</b> 제주도 제주도 제주도 사랑스럽다.
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        <b>dong</b> 제주도 푸른밤 ~ .
+      </div>
+      
+      <div style="border-top: 1px solid gray ;">
+        <input style="box-shadow: none; border: none; " type="text" class="form-control" id="exampleFormControlInput1" placeholder="댓글입력"></div>
+    </div>
+    <div class="feed_box">
+      <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
+        <div class="box">
+          <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi29nqAHktGOjanxqj6X5GeaWCU1jLOoNVHecgJW85fQvX6xA8KHT0shpjVG6q4rlH1iM&usqp=CAU" alt="">
+        </div>
+        <div >
+          nlcholas
+        </div>
+      </div>
+      <div>
+        <img style="width: 100%;" src="http://san.chosun.com/site/data/img_dir/2018/11/28/2018112802771_0.jpg" alt="">
+      </div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 0 20px;">
+        <div>
+          <span class="material-icons-outlined">favorite_border</span>
+          <span class="material-icons-outlined">mode_comment</span>
+          <span class="material-icons-outlined">send</span>
+        </div>
+        <div>
+          <span class="material-icons-outlined">bookmark_border</span>
+        </div>
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        홍길동 <b>외 17명</b>이 좋아합니다.
+      </div>
+      <div style="text-align: left; font-size: 16px; margin: 0 20px;">
+        <b>mr.hong</b> 독도 너무좋다.
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        <b>gil</b> 독도 사랑스럽다.
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        <b>dong</b> 제주도 푸른밤 ~ .
+      </div>
+      
+      <div style="border-top: 1px solid gray ;">
+        <input style="box-shadow: none; border: none; " type="text" class="form-control" id="exampleFormControlInput1" placeholder="댓글입력"></div>
+    </div>
+    <div class="feed_box">
+      <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
+        <div class="box">
+          <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi29nqAHktGOjanxqj6X5GeaWCU1jLOoNVHecgJW85fQvX6xA8KHT0shpjVG6q4rlH1iM&usqp=CAU" alt="">
+        </div>
+        <div >
+          nlcholas
+        </div>
+      </div>
+      <div>
+        <img style="width: 100%;" src="http://san.chosun.com/site/data/img_dir/2018/11/28/2018112802771_0.jpg" alt="">
+      </div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 0 20px;">
+        <div>
+          <span class="material-icons-outlined">favorite_border</span>
+          <span class="material-icons-outlined">mode_comment</span>
+          <span class="material-icons-outlined">send</span>
+        </div>
+        <div>
+          <span class="material-icons-outlined">bookmark_border</span>
+        </div>
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        홍길동 <b>외 17명</b>이 좋아합니다.
+      </div>
+      <div style="text-align: left; font-size: 16px; margin: 0 20px;">
+        <b>mr.hong</b> 독도 너무좋다.
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        <b>gil</b> 독도 사랑스럽다.
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        <b>dong</b> 제주도 푸른밤 ~ .
+      </div>
+      
+      <div style="border-top: 1px solid gray ;">
+        <input style="box-shadow: none; border: none; " type="text" class="form-control" id="exampleFormControlInput1" placeholder="댓글입력"></div>
+    </div>
+    <div class="feed_box">
+      <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
+        <div class="box">
+          <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi29nqAHktGOjanxqj6X5GeaWCU1jLOoNVHecgJW85fQvX6xA8KHT0shpjVG6q4rlH1iM&usqp=CAU" alt="">
+        </div>
+        <div >
+          nlcholas
+        </div>
+      </div>
+      <div>
+        <img style="width: 100%;" src="http://san.chosun.com/site/data/img_dir/2018/11/28/2018112802771_0.jpg" alt="">
+      </div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 0 20px;">
+        <div>
+          <span class="material-icons-outlined">favorite_border</span>
+          <span class="material-icons-outlined">mode_comment</span>
+          <span class="material-icons-outlined">send</span>
+        </div>
+        <div>
+          <span class="material-icons-outlined">bookmark_border</span>
+        </div>
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        홍길동 <b>외 17명</b>이 좋아합니다.
+      </div>
+      <div style="text-align: left; font-size: 16px; margin: 0 20px;">
+        <b>mr.hong</b> 독도 너무좋다.
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        <b>gil</b> 독도 사랑스럽다.
+      </div>
+      <div style="text-align: left; font-size: 14px; margin: 0 20px;">
+        <b>dong</b> 제주도 푸른밤 ~ .
+      </div>
+      
+      <div style="border-top: 1px solid gray ;">
+        <input style="box-shadow: none; border: none; " type="text" class="form-control" id="exampleFormControlInput1" placeholder="댓글입력"></div>
+    </div>
+  </div>
+  <!-- 오른쪽 박스 영역  -->
+  <div class="right_box" >
+    <div>
+      <div style="display: flex; flex-direction: row; align-items: center; margin: 0 20px;">
+        <div class="box" style="width: 70px; height: 70px;">
+          <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi29nqAHktGOjanxqj6X5GeaWCU1jLOoNVHecgJW85fQvX6xA8KHT0shpjVG6q4rlH1iM&usqp=CAU" alt="">
+        </div>
+        <div style="margin-left: 10px; text-align: left;">
+          <div style="font-weight: bold;">
+            nlcholas
+          </div>
+          <div style="color: gray;">
+            hangu
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+      <div style="font-weight: bold; color: gray;">
+        회원님을 위한 추천
+      </div>
+      <div>
+        <a href="#" style="text-decoration: none; color: black;">모두보기</a>
+      </div>
+    </div>
+    <div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; ">
+        <div style="display: flex; flex-direction: row;">
+          <div class="box" style="width: 35px; height: 35px;">
+            <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2lQpaYD29RipMNufFnFZY0gfNH-ubntUiv70FdaOQ1PHLh06S9ZFyXk1gQpo8B58MK1M&usqp=CAU" alt="">
+          </div>
+          <div style="margin-left: 10px; text-align: left;">
+            <div style="font-weight: bold; font-size: 14px;">
+              aaaaaaaa
+            </div>
+            <div style="color: gray; font-size: 14px;">
+              나랑같이 좋은데감
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="#" style="text-decoration: none; font-weight: bold; font-size: 14px; color: blue;">팔로우</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+        <div style="display: flex; flex-direction: row;">
+          <div class="box" style="width: 35px; height: 35px;">
+            <img class="profile" src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/cnoC/image/jwNZCcs_UuczrI7JnTq4Injq_bo.jpg" alt="">
+          </div>
+          <div style="margin-left: 10px; text-align: left;">
+            <div style="font-weight: bold; font-size: 14px;">
+              bbbbbbbbb
+            </div>
+            <div style="color: gray; font-size: 14px;">
+              나랑같이 좋은데감
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="#" style="text-decoration: none; font-weight: bold; font-size: 14px; color: blue;">팔로우</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; ">
+        <div style="display: flex; flex-direction: row;">
+          <div class="box" style="width: 35px; height: 35px;">
+            <img class="profile" src="https://img.hankyung.com/photo/201903/AA.19067065.1.jpg" alt="">
+          </div>
+          <div style="margin-left: 10px; text-align: left;">
+            <div style="font-weight: bold; font-size: 14px;">
+              ccccccc
+            </div>
+            <div style="color: gray; font-size: 14px;">
+              나랑같이 좋은데감
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="#" style="text-decoration: none; font-weight: bold; font-size: 14px; color: blue;">팔로우</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; ">
+        <div style="display: flex; flex-direction: row;">
+          <div class="box" style="width: 35px; height: 35px;">
+            <img class="profile" src="https://upcle.me/wp-content/uploads/2019/08/카카오234.jpg" alt="">
+          </div>
+          <div style="margin-left: 10px; text-align: left;">
+            <div style="font-weight: bold; font-size: 14px;">
+            ddddddd
+            </div>
+            <div style="color: gray; font-size: 14px;">
+              나랑같이 좋은데감
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="#" style="text-decoration: none; font-weight: bold; font-size: 14px; color: blue;">팔로우</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 40px; font-size: 12px; color: gray; text-align: left;">
+      소개 도움말 홍보센터 API 채용정보 <br> 개인정보처리방침 약관 위치 인기계정 해시태그 언어
+    </div>
+    <div style="margin-top: 20px; font-size: 12px; color: gray; text-align: left;">
+      2022 인스타 프롬페이스북
+    </div>
+  </div>
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
