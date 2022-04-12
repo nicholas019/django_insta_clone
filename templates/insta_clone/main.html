@@ -89,12 +89,22 @@
   <div class="container-fluid" style="justify-content: space-between; flex-wrap: nowrap; min-width: 1000px;">
     <img style="width: 100px;" src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt="">
     <input class="form-control me-2" style="width: 400px;" type="search" placeholder="Search" aria-label="Search">
-    <div>
-      <span class="material-icons">home</span>
-      <span class="material-icons-outlined">send</span>
-      <span id="nav_bar_add_box" class="material-icons-outlined">add_box</span>
-      <span class="material-icons-outlined">explore</span>
-      <span class="material-icons">favorite_border</span>
+    <div style="display: flex; ">
+      <span style="padding-right: 10px;" class="material-icons">home</span>
+      <span style="padding-right: 10px;" id="nav_bar_add_box" class="material-icons-outlined">add_box</span>
+      <div class="dropdown" >
+        <a class="btn btn-secondary " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0px; border: 0px; background-color: #fafafa;">
+          <div class="box" style="width: 25px; height: 25px;">
+            <img  class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi29nqAHktGOjanxqj6X5GeaWCU1jLOoNVHecgJW85fQvX6xA8KHT0shpjVG6q4rlH1iM&usqp=CAU" alt="">
+          </div>
+        </a>
+      
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="left: -130px; text-align: center; ">
+          <li><a class="dropdown-item" href="#">프로필</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
+        </ul>
+      </div>
     </div>
   </div>  
 </nav>

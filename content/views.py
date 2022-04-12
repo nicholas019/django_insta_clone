@@ -3,9 +3,9 @@ from .models import Feed
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.shortcuts import render
-from calendar import c
 from uuid import uuid4
 from insta_clone.settings import MEDIA_ROOT
+from user.models import User
 
 # Create your views here.
 
@@ -16,6 +16,21 @@ class Main(APIView):
         feed_list = Feed.objects.all().order_by('-id')  # DB의 ID 역순으로 데이터를 가져온다
         # for feed in feed_list:      # feed_list에 Feed모듈이 관리하는 객체(데이터)들이 어떤것들이 담겼는지 for문을 통해 출력해보고
         #    print(feed.content)     # 확인해보는 작업, 이러한작업을 로그를 찍어본다하는데 중간중간 값을 확인하는 습관을 가지는 것이 좋다.
+
+        # print('로그인한 사용자:', request.session['email']) # 세션정보 있는 email을 출력해라
+
+        email = request.session.get('email', None)
+        # 지금 접속해있는 세션정보를 email이라는 변수에 넣어라
+
+        if email is None:  # 만약 이메일이 DB에 없다면 로그인화면으로 돌려보내라
+            return render(request, "user/login.html")
+
+        user = User.objects.filter(email=email).first()
+        # email변수에 담긴 세션정보를 DB에 필터함수로 조회해서 결과를 user변수에 넣어라
+
+        if user is None:  # 이메일이 맞는게 없어서 user변수에 넣을게 없다면 로그인페이지로 돌려보내라
+            return render(request, "user/login.html")
+
         return render(request, "insta_clone/main.html", context=dict(feeds=feed_list))
         # context의 값을 넣을때는 딕셔너리형식으로 넣어야하는데 이유는 원래 우리가 필요한건 json형식인데 파이썬의 딕셔너리형식이랑 호환이된다.
 
@@ -48,3 +63,21 @@ class UploadFeed(APIView):
                             user_id=user_id, profile=profile, like_count=0)
 
         return Response(status=200)
+
+
+class Profile(APIView):
+    def get(self, request):
+
+        email = request.session.get('email', None)
+        # 지금 접속해있는 세션정보를 email이라는 변수에 넣어라
+
+        if email is None:  # 만약 이메일이 DB에 없다면 로그인화면으로 돌려보내라
+            return render(request, "user/login.html")
+
+        user = User.objects.filter(email=email).first()
+        # email변수에 담긴 세션정보를 DB에 필터함수로 조회해서 결과를 user변수에 넣어라
+
+        if user is None:  # 이메일이 맞는게 없어서 user변수에 넣을게 없다면 로그인페이지로 돌려보내라
+            return render(request, "user/login.html")
+
+        return render(request, "content/profile.html", context=dict(user=user))

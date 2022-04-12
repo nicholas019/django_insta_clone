@@ -1,8 +1,13 @@
+import email
+import os
 from django.shortcuts import render
 from rest_framework.views import APIView
 from .models import User
 from django.contrib.auth.hashers import make_password  # 장고에서 기본적으로 제공하는 단방향 암호화 모듈
 from rest_framework.response import Response
+from uuid import uuid4
+from insta_clone.settings import MEDIA_ROOT
+
 # Create your views here.
 
 
@@ -50,3 +55,46 @@ class Login(APIView):
         else:
             # 비밀번호가 틀리면 메세지 를 보내라
             return Response(status=400, data=dict(message="회원정보가 잘못되었습니다."))
+
+
+class LogOut(APIView):
+    def get(self, request):
+      # get방식의 로그아웃 : 로그아웃버튼을 누르는 이벤트 발생
+        request.session.flush()
+        # 가지고있는 세션정보를 지워라
+        return render(request, "user/login.html")
+        # 세션정보를 지우면 다시 로그인 페이지로 돌아가라
+
+
+class UploadProfile(APIView):
+    def post(self, request):
+
+        # 해석 : 브라우저에 저장되어있는 파일과 이메일주소를 불러온다
+        file = request.FILES['file']
+        email = request.data.get('email')
+
+        # 파일명이 특수문자 한글 등 복잡하게 되어있으면 서버가 읽기 힘들어 고유한 id값으로 변경해주어야 서버가 읽기 편해진다.
+        # uuid4.hex를 사용하면 랜덤한 글자를 생성해준다.
+        uuid_name = uuid4().hex
+        # settings.py에 설정한 미디어서버의 경로(midia폴더)로 uuid4함수를 사용해서 랜덤하게 이름을 바꾼 파일을 저장한다.
+        save_path = os.path.join(MEDIA_ROOT, uuid_name)
+
+        # 파일을 하나씩읽어서 저장한다.
+        with open(save_path, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+
+        file = request.data.get('file')
+
+        # 위의 uuid4().hex 함수로 랜덤하게 이름이바뀐 파일을 profile 변수를 넣는다.
+        profile = uuid_name
+
+        # 브라우저에서 불러온 이메일주소를 이용해서 User클래스에 접근해서 user정보를 찾고
+        user = User.objects.filter(email=email).first()
+
+        # profile에 있는 파일을 user의 profile에 넣고 저장한다.
+        user.profile = profile
+        user.save()
+        # create의 경우 데이터배이스에서 생성 또는 추가여서 따로 저장할 필요는 없지만 지금처럼 수정하는 경우는 DB저장을 꼭 해줘야한다.
+
+        return Response(status=200)
